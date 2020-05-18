@@ -11,51 +11,7 @@
 <meta charset="UTF-8">
 <title></title>
 <link rel="stylesheet" href="css/mk_user_w_projectList.css">
-<script type="text/javascript">
-	$(document).ready(function(){
-		// 카테고리
-		$("#all").click(function(){
-			$("[name=category]").val("all");
-			$("#category").submit();
-		});
-		$("#edu").click(function(){
-			$("[name=category]").val("edu");
-			$("#category").submit();
-		});
-		$("#beauty").click(function(){
-			$("[name=category]").val("beauty");
-			$("#category").submit();
-		});
-		$("#homeLiving").click(function(){
-			$("[name=category]").val("homeLiving");
-			$("#category").submit();
-		});
-		$("#culture").click(function(){
-			$("[name=category]").val("culture");
-			$("#category").submit();
-		});
-		$("#sports").click(function(){
-			$("[name=category]").val("sports");
-			$("#category").submit();
-		});
-		$("#book").click(function(){
-			$("[name=category]").val("book");
-			$("#category").submit();
-		});
-		$("#dog").click(function(){
-			$("[name=category]").val("dog");
-			$("#category").submit();
-		});
-		$("#electro").click(function(){
-			$("[name=category]").val("electro");
-			$("#category").submit();
-		});
-	});
-	function go_detail(no){
-		$(location).attr("href", "funding.do?method=detail&pro_code="+no);
-	}
-
-</script>
+<script src="js/mk_user_w_projectList.js"></script>
 </head>
 <body>
 	<div class="main">
@@ -113,7 +69,7 @@
 						<div>
 						<form class="ProjectListHead_search">
 							<label for="search-keyword">
-								<input class="form-control" id="search-keyword" type="search" placeholder="검색어를 입력하세요" value="">
+								<input class="" id="search-keyword" type="search" placeholder="검색" value="">
 								<button type="submit" style="border:none; background-color: transparent; color:black;" class="fa fa-search" aria-label="검색"></button>
 							</label>
 						</form>
@@ -139,7 +95,7 @@
 			<div style="background-color: rgb(245, 247, 250); margin:30px auto 0;">
 					<div class="row">
 				<c:forEach var="proj" items="${plist}">
-						<div class="col-xs-12 col-md-3 item" onclick="javascript:go_detail('${proj.pro_code}')">
+						<div class="col-xs-12 col-md-3 item"  onclick="javascript:go_detail('${proj.pro_code}')">
 							<div class="thumbnail projectList-item">
 								<img alt="..." src="img/${proj.pro_image}">
 								<div class="caption proj-info">
@@ -148,7 +104,7 @@
 										<span class="ProjectList-maker">${proj.cate_title} | ${proj.maker_name}</span>
 									</div>
 									<div>
-										<span class="ProjectList-rate">모금율 : ${proj.percent}%</span>
+										<span class="ProjectList-rate">모금율 : 90%</span>
 										<span class="ProjectList-date">남은기간 : 7일</span>
 									</div>
 								</div>
@@ -160,11 +116,11 @@
 		<!-- 페이징 -->
 			<div class="text-center">
 		        <ul class="pagination ct-orange"> 
-					<li><a href="javascript:goPage(${project.startBlock-1})">&laquo;</a></li>
-					<c:forEach var="cnt" begin="${project.startBlock}" end="${project.endBlock}">
-						<li class="${project.curPage==cnt?'active':'' }"><a href="javascript:goPage(${cnt})">${cnt}</a></li>
+					<li><a href="javascript:goPage(${paging.startBlock-1})">&laquo;</a></li>
+					<c:forEach var="cnt" begin="${paging.startBlock}" end="${paging.endBlock}">
+						<li class="${paging.curPage==cnt?'active':'' }"><a href="javascript:goPage(${cnt})">${cnt}</a></li>
 					</c:forEach>
-					<li><a href="javascript:goPage(${project.endBlock==project.pageCount?project.pageCount:project.endBlock+1})">&raquo;</a></li>
+					<li><a href="javascript:goPage(${paging.endBlock==paging.pageCount?paging.pageCount:paging.endBlock+1})">&raquo;</a></li>
 				</ul>
 	        </div>
 		
