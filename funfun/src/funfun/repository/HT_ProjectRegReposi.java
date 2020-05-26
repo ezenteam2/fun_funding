@@ -24,10 +24,13 @@ public interface HT_ProjectRegReposi {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public Project projectInfo(int pro_code);
 	public void projectRegister(int pro_code);
 =======
 >>>>>>> parent of 7f1046d... 1111
+=======
+>>>>>>> parent of 5e57446... 1111
 =======
 >>>>>>> parent of 5e57446... 1111
 =======
