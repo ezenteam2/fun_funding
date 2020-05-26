@@ -156,6 +156,7 @@ public class HT_ProjectRegCtrl {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	@RequestMapping(params="method=projectRegister")
 	public String projectRegister(HttpServletRequest request) {
@@ -168,6 +169,8 @@ public class HT_ProjectRegCtrl {
 		return "WEB-INF\\views\\project_reg\\ht_user_w_MS_projectReg_risk.jsp";
 	}
 >>>>>>> parent of 7f1046d... 1111
+=======
+>>>>>>> parent of 5e57446... 1111
 =======
 >>>>>>> parent of 5e57446... 1111
 =======
