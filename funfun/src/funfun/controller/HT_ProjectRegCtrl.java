@@ -31,17 +31,6 @@ public class HT_ProjectRegCtrl {
 	public String initPage(HttpServletRequest request, Model d) {
 		return "WEB-INF\\views\\project_reg\\ht_user_w_MS_projectReg_Ready.jsp";
 	}
-
-
-	
-	@RequestMapping(params="method=projectManage")
-	public String projectManage(HttpServletRequest request, Model d, int pro_code) {
-		HttpSession session = request.getSession();
-		System.out.println(pro_code);
-		session.setAttribute("projectCode", pro_code);
-		return "WEB-INF\\views\\project_reg\\ht_user_w_MS_projectReg_Ready.jsp";
-	}
-	
 	
 	
 =======
@@ -64,6 +53,14 @@ public class HT_ProjectRegCtrl {
 		d.addAttribute("projectCode", service.getProjectCode());
 		session.setAttribute("projectCode", service.getProjectCode());
 		System.out.println("새로 만든 프로젝트 코드 : " + service.getProjectCode());
+		return "WEB-INF\\views\\project_reg\\ht_user_w_MS_projectReg_Ready.jsp";
+	}
+	
+	
+	
+	
+	@RequestMapping(params="method=projectManage")
+	public String projectManage(HttpServletRequest request, Model d, Project proInfo) {
 		return "WEB-INF\\views\\project_reg\\ht_user_w_MS_projectReg_Ready.jsp";
 	}
 	
@@ -155,6 +152,7 @@ public class HT_ProjectRegCtrl {
 		service.regProRisk(cre);
 		return "redirect:/ProjectReg.do?method=risk";
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping(params="method=projectRegister")
 	public String projectRegister(HttpServletRequest request) {
@@ -167,5 +165,7 @@ public class HT_ProjectRegCtrl {
 		return "WEB-INF\\views\\project_reg\\ht_user_w_MS_projectReg_risk.jsp";
 	}
 >>>>>>> parent of 7f1046d... 1111
+=======
+>>>>>>> parent of 5e57446... 1111
 
 }
