@@ -1,2 +1,4 @@
 /build/
 funfun/.dbeaver/project-metadata.json
+funfun/src/funfun/controller/HT_ProjectRegCtrl.java
+funfun/src/funfun/repository/HT_ProjectRegReposi.java
